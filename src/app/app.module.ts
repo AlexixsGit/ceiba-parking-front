@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { EnterVehicleComponent } from './enter-vehicle/enter-vehicle.component';
+import { DepartureVehicleComponent } from './departure-vehicle/departure-vehicle.component';
+import { QueryVehicleComponent } from './query-vehicle/query-vehicle.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EnterVehicleComponent,
+    DepartureVehicleComponent,
+    QueryVehicleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
