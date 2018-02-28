@@ -9,3 +9,7 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.required-fields{
+    color: red;
+}
