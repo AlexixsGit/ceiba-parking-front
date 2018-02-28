@@ -13,7 +13,7 @@ import { EnterVehicleService } from './enter-vehicle.service';
 export class EnterVehicleComponent implements OnInit {
 
   private plaque: string = "";
-  private vehicleTypeId: string = '1';
+  private vehicleTypeId: string = '2';
   private engine: number = 0;
   private entryDate: string;
   private parking: Parking;
@@ -22,7 +22,6 @@ export class EnterVehicleComponent implements OnInit {
   private isValid: boolean = true;
   private isSuccess: boolean = false;
   private message: string;
-  private showVehicleType: boolean = false;
 
   constructor(private enterVehicleService: EnterVehicleService) {
     this.parking = new Parking();
@@ -34,7 +33,6 @@ export class EnterVehicleComponent implements OnInit {
 
   public save(): void {
     this.isSuccess = false;
-    this.isValid = false;
     this.complete();
     this.isValid = this.enterVehicleService.validate(this.parking);
     if (this.isValid) {
@@ -79,7 +77,7 @@ export class EnterVehicleComponent implements OnInit {
     this.vehicleType = new VehicleType();
     this.parking = new Parking();
     this.plaque = "";
-    this.vehicleTypeId = '1';
+    this.vehicleTypeId = '2';
     this.engine = 0;
     this.entryDate = '';
   }

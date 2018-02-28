@@ -1,3 +1,78 @@
-<p>
-  departure-vehicle works!
-</p>
+<div class="main-div">
+  <h1 class="main-titles">Salida de vehículos</h1>
+  <div class="alert alert-success" role="alert" *ngIf="isSuccess">
+    {{message}}
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="!isValid">
+    {{message}}
+  </div>
+  <form>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">
+        <span class="required-fields">*</span>Placa</label>
+      <div class="col-sm-10">
+        <input type="text" name="plaque" size="6" [(ngModel)]="plaque" (click)="clearValidations()" class="form-control" id="plaque"
+          placeholder="Ingrese la placa">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="entryDate" class="col-sm-2 col-form-label">Fecha de salida</label>
+      <div class="col-sm-10">
+        <input type="text" name="departureDate" size="6" class="form-control" (click)="clearValidations()" id="departureDate" [(ngModel)]="departureDate"
+          placeholder="Ingrese la fecha en formato yyyy-MM-dd HH:mm:ss">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary" (click)="!isRunning && save()">Terminar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal modalError fade" #invoiceModal id="invoiceModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span>Factura de salida</span>
+      </div>
+      <div class="modal-body row">
+        <div class="container col-md-12">
+          <form>
+            <div class="row">
+              <div class="column">
+                <ul style="list-style:none">
+                  <li>Placa:</li>
+                  <li>Vehículo:</li>
+                  <li>Empleado:</li>
+                  <li>Fecha y hora de ingreso:</li>
+                  <li>Fecha y hora de salida:</li>
+                  <li>Iva:</li>
+                  <li>Costo adicional:</li>
+                  <li>Subtotal:</li>
+                  <li>Total:</li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul style="list-style:none">
+                  <li>{{invoicePlaque}}</li>
+                  <li>{{invoiceDescVehicleType}}</li>
+                  <li>{{invoiceEmployee}}</li>
+                  <li>{{invoiceEntryDate | date:'yyyy-MM-dd HH:mm:ss'}}</li>
+                  <li> {{invoiceDapartureDate | date:'yyyy-MM-dd HH:mm:ss'}} </li>
+                  <li>{{invoiceIva}}</li>
+                  <li>{{invoiceAdditionalCost}}</li>
+                  <li>{{invoiceSubtotal}}</li>
+                  <li>{{invoiceTotal}}</li>
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span data-dismiss="modal" class="btn btn-default" value="cerrar">Imprimir</span>
+      </div>
+    </div>
+  </div>
+</div>
