@@ -12,7 +12,7 @@
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">Buscar</button>
         </span>
-        <input type="text" [(ngModel)]="plaque" class="form-control plaque-input"  placeholder="Ingrese la placa...">
+        <input type="text" [(ngModel)]="plaque" class="form-control plaque-input" placeholder="Ingrese la placa...">
       </div>
       <!-- /input-group -->
     </div>
@@ -24,8 +24,6 @@
           <th scope="col">Placa</th>
           <th scope="col">Tipo de vehiculo</th>
           <th scope="col">Fecha y hora ingreso</th>
-          <th scope="col">Fecha y hora salida</th>
-          <th scope="col">Cilindraje</th>
         </tr>
       </thead>
       <tbody>
@@ -33,8 +31,6 @@
           <th scope="row">{{item.plaque}}</th>
           <td>{{item.vehicleType.description}}</td>
           <td>{{item.entryDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
-          <td>{{item.departureDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
-          <td>{{item.engineCapacity}}</td>
         </tr>
       </tbody>
     </table>
