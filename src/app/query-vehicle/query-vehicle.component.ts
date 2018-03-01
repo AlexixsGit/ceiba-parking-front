@@ -12,7 +12,8 @@ import { QueryVehicleService } from './query-vehicle.service';
 export class QueryVehicleComponent implements OnInit {
 
   private vehicleList: Parking[];
-
+  private vehicleFiltered: Parking[];
+  private plaque: string;
 
   constructor(private queryVehicleService: QueryVehicleService) {
 
@@ -21,6 +22,7 @@ export class QueryVehicleComponent implements OnInit {
   ngOnInit() {
     this.loadVehicles();
   }
+
 
   private loadVehicles(): void {
     this.queryVehicleService.loadVehicles().subscribe(res => {

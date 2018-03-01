@@ -25,3 +25,7 @@
     display: table;
     clear: both;
 }
+
+.plaque-input {
+    text-transform: uppercase;
+}

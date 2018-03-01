@@ -6,6 +6,18 @@
 
   <div *ngIf="vehicleList.length > 0">
     <h1 class="main-titles">Consulta de vehículos</h1>
+
+    <div class="col-lg-4">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Buscar</button>
+        </span>
+        <input type="text" [(ngModel)]="plaque" class="form-control plaque-input"  placeholder="Ingrese la placa...">
+      </div>
+      <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
+    <div style="padding-top:15px"></div>
     <table class="table">
       <thead>
         <tr>
@@ -17,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of vehicleList">
+        <tr *ngFor="let item of vehicleList | parkingSearch:plaque">
           <th scope="row">{{item.plaque}}</th>
           <td>{{item.vehicleType.description}}</td>
           <td>{{item.entryDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
