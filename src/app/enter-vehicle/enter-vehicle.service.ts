@@ -22,7 +22,7 @@ export class EnterVehicleService {
     }
     if (parking.vehicleType.id == 0) {
       isValid = false;
-    } else if (parking.vehicleType.id == 2 && parking.engineCapacity == 0) {
+    } else if (parking.vehicleType.id == 1 && parking.engineCapacity == 0) {
       isValid = false;
     }
     return isValid;

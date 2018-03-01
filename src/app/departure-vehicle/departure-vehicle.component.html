@@ -60,10 +60,10 @@
                   <li>{{invoiceEmployee}}</li>
                   <li>{{invoiceEntryDate | date:'yyyy-MM-dd HH:mm:ss'}}</li>
                   <li> {{invoiceDapartureDate | date:'yyyy-MM-dd HH:mm:ss'}} </li>
-                  <li>{{invoiceIva}}</li>
-                  <li>{{invoiceAdditionalCost}}</li>
-                  <li>{{invoiceSubtotal}}</li>
-                  <li>{{invoiceTotal}}</li>
+                  <li>{{invoiceIva | currency}}</li>
+                  <li>{{invoiceAdditionalCost | currency}}</li>
+                  <li>{{invoiceSubtotal | currency}}</li>
+                  <li>{{invoiceTotal | currency}}</li>
                 </ul>
               </div>
             </div>
