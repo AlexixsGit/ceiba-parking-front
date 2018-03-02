@@ -28,7 +28,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of vehicleList | parkingSearch:plaque">
-          <th scope="row">{{item.plaque}}</th>
+          <th scope="row" class="plaque-input">{{item.plaque}}</th>
           <td>{{item.vehicleType.description}}</td>
           <td>{{item.entryDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
         </tr>
